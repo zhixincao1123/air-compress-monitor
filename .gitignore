@@ -1,0 +1,20 @@
+# 构建产物
+bin/
+obj/
+*.user
+*.suo
+*.ncb
+*.sdf
+*.opendb
+*.VC.db
+.vs/
+*.pdb
+*.cache
+
+# 运行期数据（数据库 / CSV / 归档）
+# 位置由 DataStoreOptions.RootDirectory 决定，默认落在 exe 同级的 Data 下
+Data/
+
+# 注意：packages/ 要提交。
+# 本机用 Framework 版 MSBuild 构建，不走 NuGet restore，packages 里的 dll 是构建的前提；
+# 忽略掉它，换台机器就编不出来了。

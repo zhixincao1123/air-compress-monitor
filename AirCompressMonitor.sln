@@ -1,0 +1,49 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirCompressMonitor.Comm", "src\AirCompressMonitor.Comm\AirCompressMonitor.Comm.csproj", "{A1C0C001-0001-4001-9001-000000000001}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirCompressMonitor.Storage", "src\AirCompressMonitor.Storage\AirCompressMonitor.Storage.csproj", "{A1C0C002-0002-4002-9002-000000000002}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirCompressMonitor.Wpf", "src\AirCompressMonitor.Wpf\AirCompressMonitor.Wpf.csproj", "{A1C0C003-0003-4003-9003-000000000003}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirCompressMonitor.Tools", "src\AirCompressMonitor.Tools\AirCompressMonitor.Tools.csproj", "{A1C0C003-0004-4004-9004-000000000004}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirCompressMonitor.SmokeTest", "tests\AirCompressMonitor.SmokeTest\AirCompressMonitor.SmokeTest.csproj", "{A1C0C0F1-000F-400F-900F-00000000000F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A1C0C001-0001-4001-9001-000000000001}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1C0C001-0001-4001-9001-000000000001}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1C0C001-0001-4001-9001-000000000001}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1C0C001-0001-4001-9001-000000000001}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1C0C002-0002-4002-9002-000000000002}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1C0C002-0002-4002-9002-000000000002}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1C0C002-0002-4002-9002-000000000002}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1C0C002-0002-4002-9002-000000000002}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1C0C003-0003-4003-9003-000000000003}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1C0C003-0003-4003-9003-000000000003}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1C0C003-0003-4003-9003-000000000003}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1C0C003-0003-4003-9003-000000000003}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1C0C003-0004-4004-9004-000000000004}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1C0C003-0004-4004-9004-000000000004}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1C0C003-0004-4004-9004-000000000004}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1C0C003-0004-4004-9004-000000000004}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1C0C0F1-000F-400F-900F-00000000000F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1C0C0F1-000F-400F-900F-00000000000F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1C0C0F1-000F-400F-900F-00000000000F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1C0C0F1-000F-400F-900F-00000000000F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B2D1D001-1111-4111-9111-0000000000AA}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  第三方程序集引用（SQLite 一系）。
+
+  为什么要有这个文件：本机用于构建的 Framework MSBuild（v4.0.30319）不会把
+  ProjectReference 的 CopyLocal 依赖透传到输出目录 —— 库项目引用的第三方 dll
+  能编译，但不会出现在 exe 的输出目录里，表现为编译期全绿、运行期
+  FileNotFoundException。所以每个 exe 项目都必须自己再引一遍。
+
+  用 $(MSBuildThisFileDirectory) 拼绝对路径，而不是写相对路径：
+  HintPath 是相对"项目目录"解析的，写相对的会随导入位置变化而失效。
+
+  导入位置：必须在 <Import ... Microsoft.CSharp.targets> 之前。
+-->
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <PropertyGroup>
+    <ThirdPartyPackagesRoot>$(MSBuildThisFileDirectory)..\packages\</ThirdPartyPackagesRoot>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Modbus 主站。工具集直接用到 IModbusMaster（从站扫描要按功能码逐个探测），
+         所以不能只靠 Comm 的 ProjectReference 带过来。 -->
+    <Reference Include="NModbus4">
+      <HintPath>$(ThirdPartyPackagesRoot)NModbus4.2.1.0\lib\net40\NModbus4.dll</HintPath>
+    </Reference>
+
+    <Reference Include="Microsoft.Data.Sqlite">
+      <HintPath>$(ThirdPartyPackagesRoot)microsoft.data.sqlite.core.9.0.15\lib\netstandard2.0\Microsoft.Data.Sqlite.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.core">
+      <HintPath>$(ThirdPartyPackagesRoot)sqlitepclraw.core.2.1.10\lib\netstandard2.0\SQLitePCLRaw.core.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.provider.e_sqlite3">
+      <HintPath>$(ThirdPartyPackagesRoot)sqlitepclraw.provider.e_sqlite3.2.1.10\lib\netstandard2.0\SQLitePCLRaw.provider.e_sqlite3.dll</HintPath>
+    </Reference>
+
+    <!-- netstandard2.0 版的 SQLitePCLRaw 用到 Span，.NET Framework 上靠这四个包补齐。
+         版本是挑过的：System.Memory 4.5.4 的程序集版本正好是 4.0.1.1，
+         与引用方要求的完全一致，能少一条绑定重定向。 -->
+    <Reference Include="System.Memory">
+      <HintPath>$(ThirdPartyPackagesRoot)system.memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers">
+      <HintPath>$(ThirdPartyPackagesRoot)system.buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics.Vectors">
+      <HintPath>$(ThirdPartyPackagesRoot)system.numerics.vectors.4.6.1\lib\net462\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe">
+      <HintPath>$(ThirdPartyPackagesRoot)system.runtime.compilerservices.unsafe.6.1.2\lib\net462\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+
+    <!-- netstandard2.0 程序集在 .NET Framework 上运行时需要这个门面 -->
+    <Reference Include="netstandard">
+      <HintPath>$(MSBuildProgramFiles32)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Facades\netstandard.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+  </ItemGroup>
+
+</Project>
