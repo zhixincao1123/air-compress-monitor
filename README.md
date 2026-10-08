@@ -17,8 +17,7 @@ src/AirCompressMonitor.Comm/        通信层（无 UI 依赖，可单独引用�
   Modbus/IModbusLink.cs             链路抽象：串口 / TCP 两种实现同一接口
   Modbus/SerialRtuLink.cs           RS232 / RS485 串口链路
   Modbus/TcpLink.cs                 Socket / TCP 链路
-  Modbus/Endianness.cs              大小端还原
-  Modbus/EndianDetector.cs          按数值合理性自动判定字节序
+  Modbus/Endianness.cs              大小端还原 + EndianDetector（按量程合理性自适应判定字节序）
   Modbus/ModbusMonitorClient.cs     多从站轮询、心跳保活、断线重连
   Profiles/PlcBrandProfile.cs       多品牌 PLC 适配模板（8 家，含默认字节序与换算系数）
   Diagnostics/RuleBasedExceptionAnalyzer.cs   异常 → 原因 → 处置建议
